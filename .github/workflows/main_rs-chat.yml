@@ -17,6 +17,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Restore Frontend packages
+        run: |
+          cd frontend
+          npm install
+      - name: Build Frontend
+        run: |
+          cd frontend
+          npm run build
+
       - name: Set up Python version
         uses: actions/setup-python@v1
         with:
